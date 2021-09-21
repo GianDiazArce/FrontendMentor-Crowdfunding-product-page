@@ -1,0 +1,175 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    opacity: 0;
+    transform: translateY(-100vh);
+    transition: transform .5s, opacity 1s;
+
+}
+.modal--open {
+    transform: translateY(0vh);
+    opacity: 1;
+}
+.modal__pledge {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(95, 31, 31, 0.2);
+    margin-top: 25px;
+    padding: 30px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: none;
+}
+.modal__pledge--open {
+    display: flex;
+}
+.inputNumber {
+    border: none;
+    outline: none;
+    border: 1px solid var(--dark-cyan);
+    padding: 12px 10px;
+    text-align: center;
+    width: 70px;
+    border-radius: 30px;
+    position: relative;
+}
+
+
+.modal__button {
+    color: white;
+    background-color: var(--dark-cyan);
+    padding: 12px 25px;
+    border-radius: 20px;
+    margin-left: .8em;
+    min-width: 80px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+
+    transition: opacity .2s;
+}
+.modal__button:active {
+    opacity: .8;
+}
+.modal__container {
+    position: relative;
+    width: 50%;
+    min-width: 630px;
+    height: 85%;
+    overflow: scroll;
+}
+/* .modal__container::before {
+    content: "x";
+    font-size: 1.1rem;
+    position: absolute;
+    font-weight: bold;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+} */
+.modal__close {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.1rem;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal__price {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+}
+.modal__price:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.modal__price--active {
+    border: 2px solid var(--cyan);
+}
+
+.price__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+.price__container .row {
+    margin: 0;
+    margin-bottom: 10px;
+}
+.price__container > div {
+    margin-right: 20px;
+}
+.modal__radio {
+    margin-top: 8px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.modal__container .price__tag {
+    margin-left: 1em;
+}
+.modal .paragraph {
+    letter-spacing: .5px;
+    line-height: 1.6rem;
+}
+.modal__container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.modal__span {
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.swal2-styled {
+    visibility: hidden ;
+    position: relative;
+    background-color: var(--cyan);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    /* max-height: 55px; */
+    max-height: 46px;
+    height: auto;
+    content: "Got it!";
+}
+.swal2-styled::after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    background-color: var(--cyan);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    width: 60px;
+    font-size: .8rem;
+    letter-spacing: .5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    /* max-height: 55px; */
+    max-height: 46px;
+    height: auto;
+    content: "Got it!";
+}
+
+

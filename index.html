@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/modal.css" />
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <title>Frontend Mentor | Crowdfunding product page</title>
+
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <figure class="nav__figure">
+                    <img
+                        class="nav__logo"
+                        src="images/logo.svg"
+                        alt="crowfund"
+                    />
+                </figure>
+                <figure class="nav__figure hamburguer">
+                    <img src="images/icon-hamburger.svg" class="nav__logo" alt="">
+                </figure>
+                <ul class="nav__items">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Discover</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Get Started</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+            <div class="card main__header">
+                <img
+                    class="main__logo"
+                    src="./images/logo-mastercraft.svg"
+                    alt=""
+                />
+                <h1>Mastercraft Bamboo Monitor Riser</h1>
+                <p class="paragraph">
+                    A beautiful & handcrafted monitor stand to reduce neck and
+                    eye strain.
+                </p>
+
+                <div class="row main__buttons">
+                    <button class="btn">Back this project</button>
+                    <div class="main__bookmark" onclick="changeBookmark()">
+                        <!-- <img
+                            class="logo"
+                            src="images/icon-bookmark.svg"
+                            alt="bookmark"
+                        /> -->
+                        <figure class="logo" id="logo-bookmark"></figure>
+                        <span class="paragraph" id="bookmark-text"
+                            >Bookmark</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="card stats">
+                <div class="stats__container">
+                    <div class="stat">
+                        <h2>$89,914</h2>
+                        <p class="paragraph">of $100,000 backed</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat">
+                        <h2>5,007</h2>
+                        <p class="paragraph">total backers</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat">
+                        <h2>56</h2>
+                        <p class="paragraph">days left</p>
+                    </div>
+                </div>
+                <div class="stats__bar">
+                    <div class="stats__progress"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="">About this project</h2>
+
+                <p class="paragraph">
+                    The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+                    platform that elevates your screen to a more comfortable
+                    viewing height. Placing your monitor at eye level has the
+                    potential to improve your posture and make you more
+                    comfortable while at work, helping you stay focused on the
+                    task at hand.
+                </p>
+
+                <p class="paragraph">
+                    Featuring artisan craftsmanship, the simplicity of design
+                    creates extra desk space below your computer to allow
+                    notepads, pens, and USB sticks to be stored under the stand.
+                </p>
+                <div class="prices">
+                    <div class="card price">
+                        <div class="row">
+                            <h2 class="price__title">Bamboo Stand</h2>
+                            <p class="price__tag">Pledge $25 or more</p>
+                        </div>
+                        <p class="paragraph">
+                            You get an ergonomic stand made of natural bamboo.
+                            You've helped us launch our promotional campaign,
+                            and you’ll be added to a special Backer member list.
+                        </p>
+                        <div class="row">
+                            <div>
+                                <span>101</span>
+                                <p class="paragraph">left</p>
+                            </div>
+                            <button class="btn" onclick="openModal()">
+                                Select Reward
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card price">
+                        <div class="row">
+                            <h2 class="price__title">Black Edition Stand</h2>
+                            <p class="price__tag">Pledge $75 or more</p>
+                        </div>
+                        <p class="paragraph">
+                            You get a Black Special Edition computer stand and a
+                            personal thank you. You’ll be added to our Backer
+                            member list. Shipping is included.
+                        </p>
+                        <div class="row">
+                            <div>
+                                <span>64</span>
+                                <p class="paragraph">left</p>
+                            </div>
+                            <button class="btn" onclick="openModal()">
+                                Select Reward
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card price price--disabled">
+                        <div class="row">
+                            <h2 class="price__title">
+                                Mahogany Special Edition
+                            </h2>
+                            <p class="price__tag">Pledge $200 or more</p>
+                        </div>
+                        <p class="paragraph">
+                            You get two Special Edition Mahogany stands, a
+                            Backer T-Shirt, and a personal thank you. You’ll be
+                            added to our Backer member list. Shipping is
+                            included.
+                        </p>
+                        <div class="row">
+                            <div>
+                                <span>0</span>
+                                <p class="paragraph">left</p>
+                            </div>
+                            <button class="btn btn--disabled" disabled>
+                                Out of Stock
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Selection modal start -->
+        <div class="modal" id="modal">
+            <form class="card modal__container">
+                <span class="modal__close" onclick="closeModal()">x</span>
+                <h2 class="modal__title">Back this project</h2>
+                <p class="paragraph modal__paragraph">
+                    Want to support us in bringing Mastercraft Bamboo Monitor
+                    Riser out in the world?
+                </p>
+                <div class="prices">
+                    <div class="card price modal__price">
+                        <div class="price__container">
+                            <input
+                                type="radio"
+                                class="modal__radio"
+                                id="priceRadio1"
+                                name="priceRadio"
+                                onclick="checkRadioValue()"
+                                value="noReward"
+                            />
+                            <div>
+                                <div class="row">
+                                    <h4>Pledge with no reward</h4>
+                                </div>
+                                <p class="paragraph">
+                                    Choose to support us without a reward if you
+                                    simply believe in our project. As a backer,
+                                    you will be signed up to receive product
+                                    updates via email.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal__pledge" id="noReward">
+                            <span class="modal__span">Enter your pledge</span>
+                            <div>
+                                <input class="inputNumber" type="number" />
+                                <button
+                                    class="modal__button"
+                                    onclick="pledgeSuccess(event)"
+                                    type="submit"
+                                >
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card price modal__price">
+                        <div class="price__container">
+                            <input
+                                class="modal__radio"
+                                type="radio"
+                                id="priceRadio2"
+                                name="priceRadio"
+                                onclick="checkRadioValue()"
+                                value="reward1"
+                            />
+                            <div>
+                                <div class="row">
+                                    <div>
+                                        <h4 style="display: inline-block">
+                                            Bamboo Stand
+                                        </h4>
+                                        <p
+                                            style="display: inline-block"
+                                            class="price__tag"
+                                        >
+                                            Pledge $25 or more
+                                        </p>
+                                    </div>
+                                    <p>101 left</p>
+                                </div>
+                                <p class="paragraph">
+                                    You get an ergonomic stand made of natural
+                                    bamboo. You've helped us launch our
+                                    promotional campaign, and you’ll be added to
+                                    a special Backer member list.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal__pledge" id="reward1">
+                            <span class="modal__span">Enter your pledge</span>
+                            <div>
+                                <input class="inputNumber" type="number" />
+                                <button
+                                    class="modal__button"
+                                    onclick="pledgeSuccess(event)"
+                                    type="submit"
+                                >
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card price modal__price">
+                        <div class="price__container">
+                            <input
+                                class="modal__radio"
+                                type="radio"
+                                id="priceRadio3"
+                                name="priceRadio"
+                                onclick="checkRadioValue()"
+                                value="reward2"
+                            />
+                            <div>
+                                <div class="row">
+                                    <div>
+                                        <h4 style="display: inline-block">
+                                            Black Edition Stand
+                                        </h4>
+                                        <p
+                                            style="display: inline-block"
+                                            class="price__tag"
+                                        >
+                                            Pledge $75 or more
+                                        </p>
+                                    </div>
+                                    <p>64 left</p>
+                                </div>
+                                <p class="paragraph">
+                                    You get a Black Special Edition computer
+                                    stand and a personal thank you. You’ll be
+                                    added to our Backer member list. Shipping is
+                                    included.
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="modal__pledge" id="reward2">
+                            <span class="modal__span">Enter your pledge</span>
+                            <div>
+                                <input class="inputNumber" type="number" />
+                                <button
+                                    class="modal__button"
+                                    onclick="pledgeSuccess(event)"
+                                    type="submit"
+                                >
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card price modal__price price--disabled">
+                        <div class="price__container">
+                            <input
+                                class="modal__radio"
+                                type="radio"
+                                id="priceRadio4"
+                                name="priceRadio"
+                                onclick="checkRadioValue()"
+                                value="reward3"
+                                disabled
+                            />
+                            <div>
+                                <div class="row">
+                                    <div>
+                                        <h4 style="display: inline-block">
+                                            Mahogany Special Edition
+                                        </h4>
+                                        <p
+                                            style="display: inline-block"
+                                            class="price__tag"
+                                        >
+                                            Pledge $200 or more
+                                        </p>
+                                    </div>
+                                    <p>0 left</p>
+                                </div>
+                                <p class="paragraph">
+                                    You get two Special Edition Mahogany stands,
+                                    a Backer T-Shirt, and a personal thank you.
+                                    You’ll be added to our Backer member list.
+                                    Shipping is included.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">GianDiazArce</a>.
+        </div>
+        <br />
+        <!-- Success modal end -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

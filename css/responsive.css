@@ -1,0 +1,30 @@
+@media screen and (max-device-width: 900px) {
+    .nav {
+        width: 95vw;
+        font-size: 1.2rem;
+    }
+
+    
+    .modal__container {
+        width: 95vw;
+        min-width: 95vw;
+    }
+}
+
+
+@media screen and (max-device-width: 700px ) {
+    .nav {
+        padding-top: 20px;
+    }
+    
+    .main {
+        width: 100%;
+        min-width: 100%;
+    }
+    .nav__items {
+        display: none;
+    }
+    .hamburguer{
+        display: flex;
+    }
+}
