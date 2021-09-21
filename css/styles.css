@@ -97,7 +97,8 @@ li {
 .header {
     width: 100vw;
     color: white;
-    background-image: url(../images/image-hero-desktop.jpg);
+    /* background-image: url(../images/image-hero-desktop.jpg); */
+    background-image: linear-gradient(0deg, rgba(255,255,255,0) 49%, rgba(0,0,0,0.6460959383753502) 80%), url(../images/image-hero-desktop.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
