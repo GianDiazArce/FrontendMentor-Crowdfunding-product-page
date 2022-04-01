@@ -12,11 +12,12 @@
     opacity: 0;
     transform: translateY(-100vh);
     transition: transform .5s, opacity 1s;
-
+    visibility: hidden;
 }
 .modal--open {
     transform: translateY(0vh);
     opacity: 1;
+    visibility: visible;
 }
 .modal__pledge {
     flex-direction: row;
@@ -67,15 +68,6 @@
     height: 85%;
     overflow: scroll;
 }
-/* .modal__container::before {
-    content: "x";
-    font-size: 1.1rem;
-    position: absolute;
-    font-weight: bold;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
-} */
 .modal__close {
     position: absolute;
     font-weight: bold;
@@ -119,7 +111,7 @@
     cursor: pointer;
 }
 
-.modal__container .price__tag {
+.price__tag {
     margin-left: 1em;
 }
 .modal .paragraph {
@@ -173,3 +165,6 @@
 }
 
 
+.modal__stock {
+    display: none;
+}

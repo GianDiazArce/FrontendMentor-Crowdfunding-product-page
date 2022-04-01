@@ -1,30 +1,116 @@
-@media screen and (max-device-width: 900px) {
+@media screen and (max-width: 900px) {
     .nav {
         width: 95vw;
         font-size: 1.2rem;
     }
 
-    
+
     .modal__container {
         width: 95vw;
         min-width: 95vw;
     }
+    
 }
 
 
-@media screen and (max-device-width: 700px ) {
+@media screen and (max-width: 700px) {
     .nav {
         padding-top: 20px;
+        padding-right: 1em;
+        padding-left: 1em;
+        align-items: center;
     }
-    
+
     .main {
         width: 100%;
         min-width: 100%;
     }
+
+    .menu__container {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, .6);
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
     .nav__items {
+        flex-direction: column;
+        width: 80%;
+        color: var(--black);
+        font-weight: 500;
+        background-color: white;
+        margin-top: calc(20vh);
+        border-radius: 20px;
+    }
+
+    .nav__item {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .nav__item:last-of-type {
+        border: none;
+    }
+
+    .nav__link {
+        margin-left: 1.5em;
+    }
+
+    .nav__items-menu {
+        display: flex;
+    }
+
+    .nav__item:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+
+    .hamburguer {
+        display: inline-block;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    .change {
+        position: fixed;
+        right: 1.2em;
+    }
+
+    .modal__pledge {
+        flex-direction: column;
+        gap: 1em;
+    }
+    .price__tag {
+        margin-left: 0 ;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .row > .modal__stock {
         display: none;
     }
-    .hamburguer{
-        display: flex;
+    .modal__stock {
+        display: block;
+        margin-top: 1em;
+    }
+    .modal__stock > span {
+        font-weight: 700;
+        font-size: 20px;
+        margin-right: 9px;
+    }
+    .main__bookmark {
+        width: auto;
+    }
+    .main__bookmark > span {
+        display: none;
+        width: auto;
     }
 }
